@@ -1,7 +1,7 @@
-# express
+### express
 学习express的一个小demo
 
-# 目录结构
+### 目录结构
 
 ```bash
 
@@ -23,19 +23,34 @@
 └── README.md           ## git说明文档
 
 ```
-# 运行
+### 运行
 
 克隆项目
+```bash
+
 	git clone https://github.com/winnerdemo/express.git
 
+```
 进入项目文件夹
+```bash
+
 	cd express
 
+```
 安装依赖
+```bash
+
 	npm i 或者 cnpm i
 
+```
 运行项目
+```bash
+
 	npm start 或者 npm run dev
 
+```
 预览项目
-	#####打开浏览器运行 http://127.0.0.1:8000
+```bash
+
+	打开浏览器运行 http://127.0.0.1:8000
+```
