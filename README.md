@@ -3,6 +3,7 @@
 
 # 目录结构
 
+```bash
 |- /
 	|- bin					## 配置服务
 		|- www 			   ### 配置web服务
@@ -21,11 +22,20 @@
 	|- package.json 		## npm包管理文件
 	|- README.md 			## git说明文档
 
+```
 # 运行
 
-### git clone https://github.com/winnerdemo/express.git
-### cd express
-### npm i 或者 cnpm i
-### npm start 或者 npm run dev
+克隆项目
+	git clone https://github.com/winnerdemo/express.git
 
-### 打开浏览器运行 http://127.0.0.1:8000
+进入项目文件夹
+	cd express
+
+安装依赖
+	npm i 或者 cnpm i
+
+运行项目
+	npm start 或者 npm run dev
+
+预览项目
+	#####打开浏览器运行 http://127.0.0.1:8000
