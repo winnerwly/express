@@ -1,9 +1,23 @@
-var express = require('express');
-var db = require("./mysql");
-
-
+const express = require('express');
+// 操作数据库
+const db = require("./mysql");
+// 解析url地址
+const url = require('url');
+// 解析url中请求的数据
+const querystring = require('querystring');
 
 module.exports = function (app) {
+
+    app.get('/userinfo', function (req, res) {
+        const uri = req.url;
+        const str = url.parse(uri).query;
+        const data = querystring.parse(str);
+        console.log(data);
+        res.send([data]);
+        // db.query('select * from user', function(err, rows) {
+        //     res.send(rows);
+        // })
+    })
     //用户登陆
     app.post('/user', function (req, res) {
         // res.render("login", {'title': 'zhuasdua'})
@@ -13,7 +27,6 @@ module.exports = function (app) {
         let username = req.body.username;
         let password = req.body.password;
         console.log(username+"...."+password)
-        // res.send('链接成功');
         db.query(`select * from user where name='${username}'`, function (err, rows) {
             if (err) {
                 console.log(err);
@@ -31,4 +44,5 @@ module.exports = function (app) {
             }
         })
     })
+
 }
