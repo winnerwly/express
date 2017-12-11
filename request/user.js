@@ -9,14 +9,20 @@ const querystring = require('querystring');
 module.exports = function (app) {
 
     app.get('/userinfo', function (req, res) {
-        const uri = req.url;
-        const str = url.parse(uri).query;
-        const data = querystring.parse(str);
-        console.log(data);
-        res.send([data]);
-        // db.query('select * from user', function(err, rows) {
-        //     res.send(rows);
-        // })
+        try{
+            const uri = req.url;
+            const str = url.parse(uri).query;
+            const data = querystring.parse(str);
+            console.log(data);
+            throw '123'
+            db.query('select * from user', function(err, rows) {
+                res.send(rows);
+            })
+        }
+        catch (e) {
+            console.log('代码执行出错了!!!', e);
+            res.send('123');
+        }
     })
     //用户登陆
     app.post('/user', function (req, res) {
