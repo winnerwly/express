@@ -29,7 +29,7 @@ var server = http.createServer(app);
 
 server.listen(port,function(){
   console.log('> services is ok! look to :http://127.0.0.1:' + port);
-  // opn('http://localhost:' + port);
+  opn('http://localhost:' + port);
 });
 server.on('error', onError);
 server.on('listening', onListening);

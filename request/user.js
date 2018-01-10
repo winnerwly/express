@@ -10,14 +10,15 @@ module.exports = function (app) {
 
     app.get('/userinfo', function (req, res) {
         try{
-            const uri = req.url;
-            const str = url.parse(uri).query;
-            const data = querystring.parse(str);
-            console.log(data);
-            throw '123'
-            db.query('select * from user', function(err, rows) {
-                res.send(rows);
-            })
+            res.send('暂时还没有你想要的用客户信息');
+            // const uri = req.url;
+            // const str = url.parse(uri).query;
+            // const data = querystring.parse(str);
+            // console.log(data);
+            // throw '123'
+            // db.query('select * from user', function(err, rows) {
+            //     res.send(rows);
+            // })
         }
         catch (e) {
             console.log('代码执行出错了!!!', e);
