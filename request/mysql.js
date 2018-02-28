@@ -6,7 +6,7 @@ var pool = mysql.createPool({
     user     : 'root',
     password : '123',
     port: '3306',
-    database: 'user',
+    database: 'thinkphp',
 });
 
 function query(sql, callback) {

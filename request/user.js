@@ -1,3 +1,4 @@
+const user = require('./func/getUserInfo');
 const express = require('express');
 // 操作数据库
 const db = require("./mysql");
@@ -8,22 +9,8 @@ const querystring = require('querystring');
 
 module.exports = function (app) {
 
-    app.get('/userinfo', function (req, res) {
-        try{
-            res.send('暂时还没有你想要的用客户信息');
-            // const uri = req.url;
-            // const str = url.parse(uri).query;
-            // const data = querystring.parse(str);
-            // console.log(data);
-            // throw '123'
-            // db.query('select * from user', function(err, rows) {
-            //     res.send(rows);
-            // })
-        }
-        catch (e) {
-            console.log('代码执行出错了!!!', e);
-            res.send('123');
-        }
+    app.get('/userinfo', function (req,res){
+        user.getUserInfo(req, res)
     })
     //用户登陆
     app.post('/user', function (req, res) {
